@@ -58,6 +58,8 @@ button {
     text-align: center;
     position: fixed;
     max-width: 90%; 
+    max-height: 80vh;
+    overflow-y: auto;
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
@@ -93,6 +95,7 @@ button {
     .modal-content {
         width: 90%;
         padding: 15px;
+        max-height: 85vh;
     }
 }
 

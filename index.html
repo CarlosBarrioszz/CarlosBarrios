@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¿Tegustaría pasar este San Valentín conmigo? 💖</h1>
+        <div class="buttons">
+            <button id="yesButton">Sí 💘</button>
+            <button id="noButton">No 😢</button>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>¡Gracias por este honor! ❤️</h2>
+            <p>Siempre serás parte de mi historia, y eso es algo que nunca cambiará!!!</p>
+            <p>"Aunque el tiempo haya pasado, 
+               y las palabras se hayan quedado calladas, 
+               quiero que sepas, sin que nada lo altere,
+               que este cariño en mi alma persiste y no muere." 
+               #notenemosmasfotos</p>
+            <div class="images" id="imageContainer">
+                <img src="imagenes/Holi.jpg" alt="Salidita" class="fade-in resized-image">                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.getElementById("noButton");
+        const yesButton = document.getElementById("yesButton");
+        const modal = document.getElementById("modal");
+        const closeModal = document.querySelector(".close");
+        const images = document.querySelectorAll(".fade-in");
+        
+        noButton.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.position = "absolute";
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+        
+        yesButton.addEventListener("click", () => {
+            modal.style.display = "block";
+            setTimeout(() => {
+                images.forEach(img => img.style.opacity = "1");
+            }, 500);
+        });
+        
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+            images.forEach(img => img.style.opacity = "0");
+        });
+    </script>
+</body>
+</html>
+
+
+
+
